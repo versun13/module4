@@ -38,4 +38,7 @@
 </form>
 
 <a href="admin/agree/" class="btn btn-success" role="button">Просмотреть комментарии необходимые для одобрения категории политика</a>
+<br>
 <a href="admin/addad/" class="btn btn-success" role="button">Панель управления рекламой</a>
+<br>
+<a href="admin/style/" class="btn btn-success" role="button">Внешний вид сайта</a>

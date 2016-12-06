@@ -25,6 +25,7 @@ class NewsController extends BaseController
         }
         $this->data['article'] = $article;
 
+
         if ($_COOKIE['views'] !== $id) {
             $articleModel->count($id);
             setcookie("views", $id, time() + 60);
@@ -37,6 +38,8 @@ class NewsController extends BaseController
         }
         $tagmodel = new ArticleandtagModel();
         $this->data['tags'] = $tagmodel->getTags($id);
+
+
 
 
         $this->render('news');

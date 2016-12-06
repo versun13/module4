@@ -55,7 +55,6 @@
             bottom: 0;
             left: 0;
         }
-
         #popup {
             background: #fff;
             width: 520px;
@@ -70,7 +69,6 @@
             -moz-border-radius: 15px;
             border-radius: 15px;
         }
-
         .close {
             display: block;
             position: absolute;
@@ -91,7 +89,6 @@
             -webkit-box-shadow: 1px 1px 3px #000;
             box-shadow: 1px 1px 3px #000;
         }
-
         .close:hover {
             background-color: #f30;
         }
@@ -131,7 +128,11 @@
 <br>
 
 <!-- template data -->
-<div class="row">
+<div class="row" style="background-color:<?php foreach ($data['back'] as $value) {
+    if($value['is_active']==1){
+        echo $value['back_color'];
+    }
+} ?>">
     <div class="col-sm-3">
         <h1>Реклама</h1>
         <?php foreach ($data['ad'] as $value) {
@@ -149,8 +150,6 @@
                 </div>
             <?php } ?>
         <?php } ?>
-
-
     </div>
 
     <div class="col-sm-6">
@@ -198,9 +197,9 @@
                     <p>грн</p>
                     <p>Сайт</p>
                     <p><?php echo $value['site']?></p>
-                <?php if ($_SESSION['is_admin'] == 1){ ?>
-                    <a href="admin/deletead/<?php echo $value['ad_id']?>">Удалить рекламу</a>
-                <?php } ?>
+                    <?php if ($_SESSION['is_admin'] == 1){ ?>
+                        <a href="admin/deletead/<?php echo $value['ad_id']?>">Удалить рекламу</a>
+                    <?php } ?>
                 </div>
             <?php } ?>
         <?php } ?>

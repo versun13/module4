@@ -4,7 +4,9 @@ namespace Controller;
 
 
 use Model\AdModel;
+use Model\HeadModel;
 use Model\TagsModel;
+use Model\BackModel;
 
 class BaseController
 {
@@ -28,6 +30,14 @@ class BaseController
         $jtags=json_encode($tagNames, JSON_UNESCAPED_UNICODE);
         $adModel=new AdModel();
         $this->data['ad']=$adModel->getAll();
+        unset($adModel);
+        unset($tagsModel);
+        $headModel=new HeadModel();
+        $this->data['head']=$headModel->getAll();
+        $backModel=new BackModel();
+        $this->data['back']=$backModel->getAll();
+
+
  ;
 
     }

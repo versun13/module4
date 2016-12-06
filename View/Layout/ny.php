@@ -11,3 +11,8 @@
 <?php echo $content; ?>
 </body>
 </html>
+<div class="row" style="background-color:<?php foreach ($data['back'] as $value) {
+    if($value['is_active']==1){
+        echo $value['back_color'];
+    }
+} ?>">

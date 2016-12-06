@@ -9,6 +9,8 @@ use Model\CategoryModel;
 use Model\ArticleModel;
 use Model\TagsModel;
 use Model\MessageModel;
+use Model\HeadModel;
+use Model\BackModel;
 
 
 class AdminController extends BaseController
@@ -77,6 +79,19 @@ class AdminController extends BaseController
         }
 
         $this->render('addad');
+    }
+    public function style()
+    {
+        $headModel=new HeadModel();
+        $backModel=new BackModel();
+        if(isset($_POST['head'])){
+            $headModel->saveSelected($_POST['head']);
+        } elseif(isset($_POST['back'])){
+            $backModel->saveSelected($_POST['back']);
+        }
+
+
+        $this->render('style');
     }
 
 }

@@ -85,7 +85,7 @@
     <?php foreach ($data['category'] as $product) { ?>
         <div id="news_block">
             <h1 style="border: solid 5px"><a
-                        href="news/pagination/<?php echo $product['category_id'] ?>?page=0"><?php echo $product['category_name']; ?>
+                        href="news/pagination/<?php echo $product['category_id'] ?>?page=0"><?php echo $product['category_name']; ?></a>
             </h1>
             <?php foreach ($product['articles'] as $article) { ?>
                 <h2 id="news_header"><a
